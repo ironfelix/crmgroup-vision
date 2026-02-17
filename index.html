@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стратегия развития — CRM Group 2026-2028</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #fafbfc;
+            --color-bg-tertiary: #f8f9fa;
+            --color-bg-accent: #f0f7ff;
+
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #5f6368;
+            --color-text-tertiary: #9aa0a6;
+
+            --color-border-light: #f5f6f7;
+            --color-border-medium: #e8eaed;
+            --color-border-dark: #dadce0;
+
+            --color-accent: #1a73e8;
+            --color-accent-dark: #1557b0;
+            --color-success: #34a853;
+            --color-warning: #fbbc04;
+            --color-danger: #ea4335;
+
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+
+            --font-size-sm: 13px;
+            --font-size-base: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 24px;
+            --font-size-2xl: 32px;
+            --font-size-3xl: 40px;
+
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: var(--space-2xl) var(--space-lg); }
+
+        .header {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-xl);
+            border: 1px solid var(--color-border-medium);
+        }
+
+        .logo {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+        }
+
+        .subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            font-weight: 400;
+        }
+
+        .current-state {
+            background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            color: white;
+        }
+
+        .current-state-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-value {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+        }
+
+        .section {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            border: 1px solid var(--color-border-medium);
+        }
+
+        .section-header { margin-bottom: var(--space-lg); }
+
+        h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .section-description {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .vision-box {
+            background: var(--color-bg-accent);
+            border-left: 4px solid var(--color-accent);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .vision-title {
+            font-size: var(--font-size-md);
+            font-weight: 600;
+            color: var(--color-accent-dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .vision-text {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+            line-height: 1.7;
+        }
+
+        .roadmap { position: relative; margin-top: var(--space-xl); }
+        .roadmap-stages { display: grid; gap: var(--space-xl); }
+
+        .stage {
+            position: relative;
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 2px solid var(--color-border-medium);
+            transition: all 0.2s ease;
+        }
+
+        .stage:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.1);
+        }
+
+        .stage-number {
+            position: absolute;
+            top: -12px;
+            left: var(--space-lg);
+            background: var(--color-accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+        }
+
+        .stage-header {
+            margin-top: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .stage-name {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stage-timeline {
+            display: inline-block;
+            background: var(--color-bg-primary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-weight: 500;
+        }
+
+        .stage-goal {
+            font-size: var(--font-size-base);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+        }
+
+        .stage-content { display: grid; gap: var(--space-md); }
+
+        .stage-block {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+        }
+
+        .stage-block-title {
+            font-size: var(--font-size-md);
+            font-weight: 600;
+            color: var(--color-accent-dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .stage-list { list-style: none; padding: 0; }
+
+        .stage-list li {
+            padding-left: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            position: relative;
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+        }
+
+        .stage-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .metric-card {
+            background: var(--color-bg-primary);
+            border: 2px solid var(--color-border-medium);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: center;
+        }
+
+        .metric-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .metric-value {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        .metric-change {
+            font-size: var(--font-size-sm);
+            color: var(--color-success);
+            font-weight: 500;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .principle-card {
+            background: var(--color-bg-tertiary);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+        }
+
+        .principle-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .principle-title {
+            font-size: var(--font-size-md);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .principle-text {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .action-box {
+            background: linear-gradient(135deg, var(--color-accent) 0%, #1557b0 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            color: white;
+            margin-top: var(--space-xl);
+        }
+
+        .action-box h3 { color: white; font-size: var(--font-size-xl); margin-bottom: var(--space-md); }
+
+        .action-steps { display: grid; gap: var(--space-md); margin-top: var(--space-lg); }
+
+        .action-step {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .action-step-number {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 700;
+            margin-right: var(--space-sm);
+        }
+
+        .action-step-text { font-size: var(--font-size-base); line-height: 1.6; }
+
+        .footer {
+            text-align: center;
+            padding: var(--space-xl);
+            color: var(--color-text-tertiary);
+            font-size: var(--font-size-sm);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-lg);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border-medium);
+        }
+
+        .comparison-table th {
+            background: var(--color-bg-tertiary);
+            font-weight: 600;
+            color: var(--color-text-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        .comparison-table td {
+            font-size: var(--font-size-base);
+            color: var(--color-text-primary);
+        }
+
+        .comparison-table tr:last-child td { border-bottom: none; }
+
+        .highlight-box {
+            background: var(--color-bg-accent);
+            border-left: 4px solid var(--color-accent);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            margin: var(--space-md) 0;
+        }
+
+        .highlight-box strong { color: var(--color-accent-dark); }
+
+        .warning-box {
+            background: #fff9e6;
+            border-left: 4px solid var(--color-warning);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            margin: var(--space-md) 0;
+        }
+
+        .success-box {
+            background: #e6f9ed;
+            border-left: 4px solid var(--color-success);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            margin: var(--space-md) 0;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: var(--space-lg) var(--space-md); }
+            h1 { font-size: var(--font-size-2xl); }
+            h2 { font-size: var(--font-size-xl); }
+            .stats-grid, .metrics, .principles-grid { grid-template-columns: 1fr; }
+            .stage-number { width: 32px; height: 32px; font-size: var(--font-size-base); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">CRM Group / Email Soldiers</div>
+            <h1>Стратегия развития 2026-2028</h1>
+            <p class="subtitle">От агентства к управлению ростом ценности клиентов</p>
+        </div>
+
+        <div class="current-state">
+            <div class="current-state-title">Точка А: Где мы сейчас</div>
+            <p style="opacity: 0.95; margin-bottom: var(--space-md);">
+                Мы агентство CRM-маркетинга. Работаем руками, считаем по часам.
+                Рынок меняется — удержание становится регулярной бизнес-функцией, а не набором активностей.
+            </p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">81</div>
+                    <div class="stat-label">человек в команде</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">11.6M₽</div>
+                    <div class="stat-label">выручка в месяц</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">143k₽</div>
+                    <div class="stat-label">выручка на человека</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">По часам</div>
+                    <div class="stat-label">модель работы</div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: var(--space-lg); background: rgba(255,255,255,0.2); border-left-color: white;">
+                <strong style="color: white;">Проблема:</strong> Почасовая оплата = линейный рост. Больше клиентов = больше людей.
+                143k₽ на человека — это в 2-3 раза ниже нормы для агентств (300-500k₽). Нет предсказуемости.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Куда мы идём</h2>
+                <p class="section-description">Наше видение и миссия на горизонте 3-5 лет</p>
+            </div>
+
+            <div class="vision-box">
+                <div class="vision-title">Видение (3-5 лет)</div>
+                <div class="vision-text">
+                    Удержание клиентов и рост их ценности (LTV) станут в компаниях базовой, управляемой
+                    бизнес-функцией — наравне с финансами и продажами. Повторные продажи не будут зависеть
+                    от разовых кампаний, героизма отдельных сотрудников или ручной работы.
+                </div>
+            </div>
+
+            <div class="vision-box">
+                <div class="vision-title">Миссия</div>
+                <div class="vision-text">
+                    Мы берём на себя управление ростом повторных продаж и ценности клиентов,
+                    превращая удержание из набора маркетинговых активностей в устойчивую операционную
+                    функцию с измеримым вкладом в прибыль бизнеса.
+                </div>
+            </div>
+
+            <div class="success-box">
+                <strong>Точка Б (через 3-5 лет):</strong> Мы управляем функцией роста ценности клиентов для 50+ компаний.
+                Рост повторных продаж происходит регулярно. Решения принимаются на основе метрик.
+                Результат не зависит от постоянного роста команды.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Дорожная карта: 4 этапа трансформации</h2>
+                <p class="section-description">
+                    Практичный путь от почасовой работы к устойчивому масштабированию
+                </p>
+            </div>
+
+            <div class="roadmap">
+                <div class="roadmap-stages">
+
+                    <!-- Этап 0 -->
+                    <div class="stage">
+                        <div class="stage-number">0</div>
+                        <div class="stage-header">
+                            <div class="stage-name">АУДИТ — Понять экономику</div>
+                            <span class="stage-timeline">0-3 месяца</span>
+                        </div>
+                        <div class="stage-goal">
+                            Цель: Разобраться, кто приносит прибыль, кто сливает деньги
+                        </div>
+
+                        <div class="stage-content">
+                            <div class="stage-block">
+                                <div class="stage-block-title">Что делаем</div>
+                                <ul class="stage-list">
+                                    <li>Аудит клиентов: считаем маржу по каждому (выручка − часы × стоимость команды)</li>
+                                    <li>Делим на 3 группы: прибыльные (>30%), нейтральные (10-30%), убыточные (&lt;10%)</li>
+                                    <li>Аудит услуг: какие услуги приносят деньги, какие сливают время?</li>
+                                    <li>Выявляем 3-5 повторяющихся запросов клиентов</li>
+                                </ul>
+                            </div>
+
+                            <div class="stage-block">
+                                <div class="stage-block-title">Быстрые решения</div>
+                                <ul class="stage-list">
+                                    <li>Убыточные клиенты: поднять цену или уйти (освободить ресурс команды)</li>
+                                    <li>Нейтральные: перевести на фиксированные пакеты</li>
+                                    <li>Прибыльные: понять паттерн, найти похожих</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="metrics">
+                            <div class="metric-card">
+                                <div class="metric-label">Команда</div>
+                                <div class="metric-value">81 → 70</div>
+                                <div class="metric-change">оптимизация</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Результат</div>
+                                <div class="metric-value">100%</div>
+                                <div class="metric-change">знаем маржу по каждому клиенту</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Этап 1 -->
+                    <div class="stage">
+                        <div class="stage-number">1</div>
+                        <div class="stage-header">
+                            <div class="stage-name">СТАНДАРТИЗАЦИЯ — Пакеты вместо часов</div>
+                            <span class="stage-timeline">3-9 месяцев</span>
+                        </div>
+                        <div class="stage-goal">
+                            Цель: Стандартизировать предложение, перейти от почасовой оплаты к пакетам
+                        </div>
+
+                        <div class="stage-content">
+                            <div class="stage-block">
+                                <div class="stage-block-title">Что делаем</div>
+                                <ul class="stage-list">
+                                    <li>Создаём 3-4 стандартных пакета на основе повторяющихся услуг</li>
+                                    <li>Новые клиенты: только пакеты</li>
+                                    <li>Действующие клиенты: плавный переход за 3-6 месяцев</li>
+                                    <li>Кто не переходит: почасовая оплата, но +30% к ставке</li>
+                                    <li>Чек-листы и шаблоны для каждого пакета</li>
+                                </ul>
+                            </div>
+
+                            <div class="stage-block">
+                                <div class="stage-block-title">Пример пакетов</div>
+                                <ul class="stage-list">
+                                    <li><strong>Базовый (200k₽/мес):</strong> 3 сценария жизненного цикла, ежемесячный отчёт, до 20ч корректировок</li>
+                                    <li><strong>Рост (400k₽/мес):</strong> Полный жизненный цикл (5-7 сценариев), встреча раз в две недели, выделенный менеджер</li>
+                                    <li><strong>Управление (800k₽/мес):</strong> Управление всей функцией, A/B тесты, еженедельная стратегическая встреча</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="metrics">
+                            <div class="metric-card">
+                                <div class="metric-label">Новые клиенты</div>
+                                <div class="metric-value">50%+</div>
+                                <div class="metric-change">на пакетах</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Выручка на человека</div>
+                                <div class="metric-value">180-200k₽</div>
+                                <div class="metric-change">+40% к текущему</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Команда</div>
+                                <div class="metric-value">70 → 65</div>
+                                <div class="metric-change">фокус на эффективность</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Этап 2 -->
+                    <div class="stage">
+                        <div class="stage-number">2</div>
+                        <div class="stage-header">
+                            <div class="stage-name">ЭФФЕКТИВНОСТЬ — Делать меньше, зарабатывать больше</div>
+                            <span class="stage-timeline">9-18 месяцев</span>
+                        </div>
+                        <div class="stage-goal">
+                            Цель: Автоматизировать рутину, чтобы один человек вёл больше клиентов
+                        </div>
+
+                        <div class="stage-content">
+                            <div class="stage-block">
+                                <div class="stage-block-title">Автоматизация (первые шаги)</div>
+                                <ul class="stage-list">
+                                    <li>Отчётность: автоматические дашборды вместо ручных отчётов</li>
+                                    <li>Диагностика: чек-листы и скрипты вместо работы с нуля каждый раз</li>
+                                    <li>Подключение клиентов: видео и самостоятельное изучение вместо 10 часов звонков</li>
+                                    <li>Библиотека шаблонов: задокументированные сценарии по отраслям</li>
+                                </ul>
+                            </div>
+
+                            <div class="stage-block">
+                                <div class="stage-block-title">Новая структура команды</div>
+                                <ul class="stage-list">
+                                    <li><strong>Было:</strong> на каждого клиента — выделенная команда</li>
+                                    <li><strong>Стало:</strong> 1 менеджер по работе с клиентами = 8-10 клиентов</li>
+                                    <li>2-3 специалиста по жизненному циклу на пул клиентов</li>
+                                    <li>1 аналитик данных на 30-40 клиентов</li>
+                                </ul>
+                            </div>
+
+                            <div class="stage-block">
+                                <div class="stage-block-title">Специализация по отраслям</div>
+                                <ul class="stage-list">
+                                    <li>Выбрать 2-3 отрасли (интернет-торговля, услуги, B2B)</li>
+                                    <li>Создать методики: что работает в каждой отрасли</li>
+                                    <li>Специализированные команды эффективнее универсальных</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="metrics">
+                            <div class="metric-card">
+                                <div class="metric-label">Выручка на человека</div>
+                                <div class="metric-value">250-300k₽</div>
+                                <div class="metric-change">+100% к старту</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Клиентов на менеджера</div>
+                                <div class="metric-value">8-10</div>
+                                <div class="metric-change">было 2-3</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Автоматизация</div>
+                                <div class="metric-value">30%+</div>
+                                <div class="metric-change">времени сэкономлено</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Этап 3 -->
+                    <div class="stage">
+                        <div class="stage-number">3</div>
+                        <div class="stage-header">
+                            <div class="stage-name">МАСШТАБ — Подписка и управление ценностью клиентов</div>
+                            <span class="stage-timeline">18-24+ месяцев</span>
+                        </div>
+                        <div class="stage-goal">
+                            Цель: Подписная модель, управление функцией, предсказуемая постоянная выручка
+                        </div>
+
+                        <div class="stage-content">
+                            <div class="stage-block">
+                                <div class="stage-block-title">Подписная модель</div>
+                                <ul class="stage-list">
+                                    <li>Переход от пакетов к ежемесячному контракту (минимум 6 месяцев)</li>
+                                    <li>Ценообразование: базовая ставка + % от прироста ценности клиентов</li>
+                                    <li>Пример: 300k₽/мес + 10% от прироста повторных продаж</li>
+                                    <li>Ежеквартальные бизнес-обзоры с метриками</li>
+                                </ul>
+                            </div>
+
+                            <div class="stage-block">
+                                <div class="stage-block-title">Управление функцией роста ценности клиентов</div>
+                                <ul class="stage-list">
+                                    <li>Мы не «делаем кампании», мы «отвечаем за рост повторных продаж»</li>
+                                    <li>Стандарты обслуживания (SLA): время ответа, циклы оптимизации</li>
+                                    <li>Регулярные метрики: ценность клиентов (LTV), повторные покупки, отток</li>
+                                    <li>Клиент воспринимает нас как оператора функции, а не подрядчика</li>
+                                </ul>
+                            </div>
+
+                            <div class="stage-block">
+                                <div class="stage-block-title">Масштабирование без пропорционального роста команды</div>
+                                <ul class="stage-list">
+                                    <li>50+ клиентов на 60-70 человек (не 150!)</li>
+                                    <li>Автоматизация + методики + специализация = эффективность</li>
+                                    <li>Цель: 500k₽ выручки на человека (топ 10% агентств)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="metrics">
+                            <div class="metric-card">
+                                <div class="metric-label">Постоянная выручка</div>
+                                <div class="metric-value">80%+</div>
+                                <div class="metric-change">от общей выручки</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Клиенты</div>
+                                <div class="metric-value">50+</div>
+                                <div class="metric-change">на 60-70 человек</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Маржа</div>
+                                <div class="metric-value">35-40%</div>
+                                <div class="metric-change">против 5% сейчас</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Принципы -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Принципы работы</h2>
+                <p class="section-description">Наши ценности и управленческая рамка</p>
+            </div>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">📊</div>
+                    <div class="principle-title">Ответственность за результат</div>
+                    <div class="principle-text">
+                        Мы отвечаем за метрики ценности клиентов (повторные продажи, LTV),
+                        а не за объём выполненных работ
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">🔄</div>
+                    <div class="principle-title">Регулярность вместо кампаний</div>
+                    <div class="principle-text">
+                        Удержание — это непрерывный процесс, а не серия разрозненных инициатив
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">💰</div>
+                    <div class="principle-title">Экономика важнее активности</div>
+                    <div class="principle-text">
+                        Любое действие оценивается через вклад в повторные продажи, LTV и маржу
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">⚙️</div>
+                    <div class="principle-title">Минимизация ручного труда</div>
+                    <div class="principle-text">
+                        Процессы должны масштабироваться без пропорционального роста команды
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">🔍</div>
+                    <div class="principle-title">Прозрачность для клиента</div>
+                    <div class="principle-text">
+                        Клиент понимает, за какую функцию мы отвечаем и какие показатели считаем успехом
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">📈</div>
+                    <div class="principle-title">Данные вместо ощущений</div>
+                    <div class="principle-text">
+                        Решения принимаются на основе метрик и тестов, а не интуиции
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: var(--space-xl);">
+                <strong>Управленческая рамка:</strong> Если инициатива не влияет на повторные продажи и LTV,
+                не может быть встроена в регулярный процесс или требует постоянного ручного контроля —
+                она не соответствует нашей стратегии.
+            </div>
+        </div>
+
+        <!-- Сравнение -->
+        <div class="section">
+            <div class="section-header">
+                <h2>Эволюция модели: было → станет</h2>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Сейчас (почасовая работа)</th>
+                        <th>Через 24 месяца (управление ценностью)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Модель</strong></td>
+                        <td>Почасовая оплата</td>
+                        <td>Подписка + % от роста повторных продаж</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Что продаём</strong></td>
+                        <td>CRM-активности и кампании</td>
+                        <td>Управление функцией роста ценности клиентов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Метрики успеха</strong></td>
+                        <td>Часы, задачи, активности</td>
+                        <td>LTV, повторные покупки, отток, окупаемость привлечения</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Команда</strong></td>
+                        <td>81 человек</td>
+                        <td>60-70 человек</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Клиенты</strong></td>
+                        <td>~20-30 (оценка)</td>
+                        <td>50+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Выручка на человека</strong></td>
+                        <td>143k₽/мес</td>
+                        <td>500k₽/мес (3.5x рост)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Маржа</strong></td>
+                        <td>5%</td>
+                        <td>35-40%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Предсказуемость</strong></td>
+                        <td>Низкая (всё зависит от новых сделок)</td>
+                        <td>80%+ постоянной выручки, отток &lt;10%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Масштабирование</strong></td>
+                        <td>Линейное (больше клиентов = больше людей)</td>
+                        <td>Нелинейное (эффективность через автоматизацию)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Действия -->
+        <div class="action-box">
+            <h3>🚀 Что делать прямо сейчас (ближайшие 2 недели)</h3>
+
+            <div class="action-steps">
+                <div class="action-step">
+                    <span class="action-step-number">1</span>
+                    <span class="action-step-text">
+                        <strong>Неделя 1:</strong> Собрать данные по всем клиентам (выручка, часы, стоимость команды за последние 3 месяца).
+                        Разбить на прибыльных, нейтральных и убыточных. Найти 3-5 услуг, которые повторяются чаще всего.
+                    </span>
+                </div>
+
+                <div class="action-step">
+                    <span class="action-step-number">2</span>
+                    <span class="action-step-text">
+                        <strong>Неделя 2:</strong> Выбрать 3 прибыльных клиентов, понять паттерн: почему они прибыльны?
+                        Набросать черновик 2-3 пакетов на основе повторяющихся услуг.
+                    </span>
+                </div>
+
+                <div class="action-step">
+                    <span class="action-step-number">3</span>
+                    <span class="action-step-text">
+                        <strong>Неделя 2:</strong> Посчитать: сколько клиентов нужно на пакетах, чтобы выйти на
+                        15M₽/мес при 65 чел (230k₽/чел)? Это покажет реалистичность плана.
+                    </span>
+                </div>
+
+                <div class="action-step">
+                    <span class="action-step-number">4</span>
+                    <span class="action-step-text">
+                        <strong>Неделя 2:</strong> Собрать команду, презентовать стратегию.
+                        Получить обратную связь по дорожной карте.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>CRM Group / Email Soldiers — Стратегия 2026-2028</p>
+            <p>Версия 2.0 — Февраль 2026</p>
+        </div>
+    </div>
+</body>
+</html>
